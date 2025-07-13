@@ -30,6 +30,7 @@ export default function GameCard({ game, onCardClick }: GameCardProps) {
           alt={game.name}
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-110"
+          unoptimized
         />
         
         {/* Play Button Overlay */}
