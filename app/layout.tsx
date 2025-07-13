@@ -20,8 +20,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body className={inter.className}>
-        <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100">
+      <body className={`${inter.className} dark`}>
+        <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-black">
           {children}
         </div>
       </body>

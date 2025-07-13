@@ -27,24 +27,24 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
 
   const getGenreColor = (genre: string) => {
     const colors = {
-      '퍼즐': 'bg-green-100 text-green-800',
-      '퍼즐게임': 'bg-green-100 text-green-800',
-      '레이싱': 'bg-red-100 text-red-800',
-      'RPG': 'bg-purple-100 text-purple-800',
-      '전략': 'bg-blue-100 text-blue-800',
-      '어드벤처': 'bg-orange-100 text-orange-800',
-      '보드게임': 'bg-indigo-100 text-indigo-800',
-      '시뮬레이션': 'bg-teal-100 text-teal-800',
-      '서바이벌': 'bg-gray-100 text-gray-800',
-      '방치형': 'bg-cyan-100 text-cyan-800',
-      '턴제': 'bg-yellow-100 text-yellow-800',
-      '탄막': 'bg-red-100 text-red-800',
-      '잠입': 'bg-slate-100 text-slate-800',
-      '로그라이크': 'bg-violet-100 text-violet-800'
+      '퍼즐': 'bg-green-900/40 text-green-300 border border-green-500/30',
+      '퍼즐게임': 'bg-green-900/40 text-green-300 border border-green-500/30',
+      '레이싱': 'bg-red-900/40 text-red-300 border border-red-500/30',
+      'RPG': 'bg-purple-900/40 text-purple-300 border border-purple-500/30',
+      '전략': 'bg-blue-900/40 text-blue-300 border border-blue-500/30',
+      '어드벤처': 'bg-orange-900/40 text-orange-300 border border-orange-500/30',
+      '보드게임': 'bg-indigo-900/40 text-indigo-300 border border-indigo-500/30',
+      '시뮬레이션': 'bg-teal-900/40 text-teal-300 border border-teal-500/30',
+      '서바이벌': 'bg-gray-800/40 text-gray-300 border border-gray-500/30',
+      '방치형': 'bg-cyan-900/40 text-cyan-300 border border-cyan-500/30',
+      '턴제': 'bg-yellow-900/40 text-yellow-300 border border-yellow-500/30',
+      '탄막': 'bg-red-900/40 text-red-300 border border-red-500/30',
+      '잠입': 'bg-slate-800/40 text-slate-300 border border-slate-500/30',
+      '로그라이크': 'bg-violet-900/40 text-violet-300 border border-violet-500/30'
     }
     
     const genreKey = Object.keys(colors).find(key => genre.includes(key))
-    return genreKey ? colors[genreKey as keyof typeof colors] : 'bg-gray-100 text-gray-800'
+    return genreKey ? colors[genreKey as keyof typeof colors] : 'bg-gray-800/40 text-gray-300 border border-gray-500/30'
   }
 
   return (
@@ -56,16 +56,16 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
       />
       
       {/* Modal */}
-      <div className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-hidden">
+      <div className="relative bg-slate-800 rounded-2xl shadow-2xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-hidden border border-slate-600/50">
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-100">
+        <div className="flex items-center justify-between p-6 border-b border-slate-600/50">
           <div className="flex items-center space-x-4">
             <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center">
               <Play className="w-6 h-6 text-white" />
             </div>
             <div>
               <div className="flex items-center space-x-3">
-                <h2 className="text-2xl font-bold text-gray-900">{game.name}</h2>
+                <h2 className="text-2xl font-bold text-white">{game.name}</h2>
                 {game.award && (
                   <div className={`flex items-center space-x-1 px-3 py-1 rounded-full text-sm font-semibold ${
                     game.award === 'excellence' 
@@ -90,9 +90,9 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
           </div>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+            className="p-2 hover:bg-slate-700 rounded-full transition-colors"
           >
-            <X className="w-6 h-6 text-gray-500" />
+            <X className="w-6 h-6 text-slate-400" />
           </button>
         </div>
 
@@ -102,19 +102,19 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
           <div className="p-6 space-y-6">
             {/* Description */}
             <div>
-              <h3 className="text-lg font-semibold mb-3">게임 소개</h3>
-              <p className="text-gray-700 leading-relaxed">{game.description}</p>
+              <h3 className="text-lg font-semibold mb-3 text-white">게임 소개</h3>
+              <p className="text-slate-300 leading-relaxed">{game.description}</p>
             </div>
 
             {/* Features */}
             {game.features && game.features.length > 0 && (
               <div>
-                <h3 className="text-lg font-semibold mb-3">주요 기능</h3>
+                <h3 className="text-lg font-semibold mb-3 text-white">주요 기능</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   {game.features.map((feature, index) => (
                     <div key={index} className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                      <span className="text-sm text-gray-700">{feature}</span>
+                      <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                      <span className="text-sm text-slate-300">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -123,9 +123,9 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
 
             {/* Developers */}
             <div>
-              <h3 className="text-lg font-semibold mb-3">개발자</h3>
-              <div className="flex items-center space-x-2">
-                <Users className="w-5 h-5 text-gray-500" />
+              <h3 className="text-lg font-semibold mb-3 text-white">개발자</h3>
+              <div className="flex items-center space-x-2 text-slate-300">
+                <Users className="w-5 h-5 text-slate-400" />
                 <span>{game.developers.join(', ')}</span>
               </div>
             </div>

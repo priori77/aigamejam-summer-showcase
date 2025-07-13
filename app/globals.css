@@ -76,27 +76,53 @@
   }
   
   .glass-effect {
-    @apply bg-white/95 border border-white/20 shadow-sm;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(148, 163, 184, 0.1);
     will-change: transform;
     transform: translateZ(0);
   }
 }
 
-/* Custom scrollbar */
+/* 밤 테마 전용 스타일 */
+.night-glow {
+  box-shadow: 0 0 20px rgba(147, 51, 234, 0.3), 0 0 40px rgba(59, 130, 246, 0.2);
+}
+
+.night-gradient-text {
+  background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 25%, #a5b4fc 50%, #8b5cf6 75%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.night-card {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.night-card:hover {
+  background: rgba(51, 65, 85, 0.9);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  box-shadow: 0 8px 32px rgba(147, 51, 234, 0.2);
+}
+
+/* 스크롤바 다크 테마 */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: rgba(15, 23, 42, 0.8);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: rgba(100, 116, 139, 0.6);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  background: rgba(148, 163, 184, 0.8);
 } 
