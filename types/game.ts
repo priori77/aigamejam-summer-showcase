@@ -10,6 +10,7 @@ export interface Game {
   name: string;
   genre: string;
   description: string;
+  themeInterpretation?: string; // 주제 해석
   thumbnail: string;
   media: GameMedia[];
   features?: string[];

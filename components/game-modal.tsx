@@ -106,16 +106,26 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
               <p className="text-slate-300 leading-relaxed">{game.description}</p>
             </div>
 
-            {/* Features */}
+            {/* Theme Interpretation */}
+            {game.themeInterpretation && (
+              <div>
+                <h3 className="text-lg font-semibold mb-3 text-white">주제해석</h3>
+                <p className="text-slate-300 leading-relaxed">{game.themeInterpretation}</p>
+              </div>
+            )}
+
+            {/* Used Tools/Programs */}
             {game.features && game.features.length > 0 && (
               <div>
-                <h3 className="text-lg font-semibold mb-3 text-white">주요 기능</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <h3 className="text-lg font-semibold mb-3 text-white">사용한 프로그램</h3>
+                <div className="flex flex-wrap gap-2">
                   {game.features.map((feature, index) => (
-                    <div key={index} className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                      <span className="text-sm text-slate-300">{feature}</span>
-                    </div>
+                    <span
+                      key={index}
+                      className="px-3 py-1.5 bg-gradient-to-r from-purple-900/60 to-blue-900/60 text-purple-200 text-sm rounded-full border border-purple-500/30 font-medium"
+                    >
+                      {feature}
+                    </span>
                   ))}
                 </div>
               </div>
