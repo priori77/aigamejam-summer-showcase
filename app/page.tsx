@@ -26,7 +26,12 @@ export default function HomePage() {
     <>
       <Header />
       
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8" 
+            style={{
+              WebkitOverflowScrolling: 'touch',
+              touchAction: 'manipulation',
+              overscrollBehavior: 'auto'
+            }}>
         {/* Hero Section */}
         <section className="text-center mb-16">
           <div className="relative">
@@ -114,7 +119,7 @@ export default function HomePage() {
             <div className="flex justify-center mb-6">
             </div>
             <p className="text-sm text-slate-400">
-             게임취업밤 AI 게임잼
+             게임취업밤 AI 게임잼 수상작
             </p>
           </div>
         </footer>

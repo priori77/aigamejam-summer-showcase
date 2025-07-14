@@ -13,13 +13,28 @@ interface GameModalProps {
 export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
   useEffect(() => {
     if (isOpen && game) {
+      // 안드로이드 환경을 고려한 스크롤 차단
       document.body.style.overflow = 'hidden'
+      document.body.style.position = 'fixed'
+      document.body.style.width = '100%'
+      document.body.style.height = '100%'
+      
+      // 터치 이벤트 차단 (안드로이드 대응)
+      document.body.style.touchAction = 'none'
     } else {
       document.body.style.overflow = 'unset'
+      document.body.style.position = 'unset'
+      document.body.style.width = 'unset'
+      document.body.style.height = 'unset'
+      document.body.style.touchAction = 'manipulation'
     }
 
     return () => {
       document.body.style.overflow = 'unset'
+      document.body.style.position = 'unset'
+      document.body.style.width = 'unset'
+      document.body.style.height = 'unset'
+      document.body.style.touchAction = 'manipulation'
     }
   }, [isOpen, game])
 
@@ -104,7 +119,12 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
         </div>
 
         {/* Content */}
-        <div className="overflow-y-auto max-h-[calc(90vh-80px)]">
+        <div className="overflow-y-auto max-h-[calc(90vh-80px)] scroll-smooth" 
+             style={{
+               WebkitOverflowScrolling: 'touch',
+               touchAction: 'pan-y',
+               overscrollBehavior: 'contain'
+             }}>
           {/* Game Details */}
           <div className="p-8 space-y-8 pb-12">
             {/* Description */}

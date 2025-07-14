@@ -23,7 +23,7 @@ export default function Header() {
               </svg>
             </div>
             <div>
-              <h1 className="text-2xl font-bold night-gradient-text">게임취업밤 AI 게임잼</h1>
+              <h1 className="text-2xl font-bold night-gradient-text">게임취업밤 AI 게임잼 수상작</h1>
               <p className="text-sm text-slate-300">출품작 쇼케이스</p>
             </div>
           </div>

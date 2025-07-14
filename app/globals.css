@@ -56,6 +56,9 @@
   
   html {
     scroll-behavior: smooth;
+    /* 모바일 스크롤 최적화 */
+    height: 100%;
+    overflow-x: hidden;
   }
   
   body {
@@ -63,6 +66,23 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* 안드로이드 스크롤 최적화 */
+    -webkit-overflow-scrolling: touch;
+    touch-action: manipulation;
+    overscroll-behavior: contain;
+    height: 100%;
+    position: relative;
+  }
+
+  /* 모바일 터치 스크롤 개선 */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* 안드로이드 크롬에서 스크롤 최적화 */
+  html, body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
   }
 }
 
@@ -125,4 +145,37 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(148, 163, 184, 0.8);
+}
+
+/* 안드로이드 모바일 스크롤 최적화 */
+@media screen and (max-width: 768px) {
+  body {
+    /* 안드로이드에서 rubber band 효과 방지 */
+    overscroll-behavior-y: contain;
+    /* 모바일에서 스크롤 성능 향상 */
+    will-change: scroll-position;
+  }
+
+  /* 터치 영역 확장 (안드로이드 터치 개선) */
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+  }
+
+  /* 안드로이드에서 스크롤 끊김 방지 */
+  .overflow-y-auto, .overflow-auto {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+}
+
+/* 안드로이드 크롬 특화 최적화 */
+@supports (-webkit-appearance: none) {
+  body {
+    /* 안드로이드 크롬에서 스크롤 버벅임 방지 */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
 } 
