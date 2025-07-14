@@ -55,7 +55,7 @@ export const sampleGames: Game[] = [
         url: '/webp/endlessnight-intro.webp',
       }
     ],
-    features: ['ChatGPT'],
+    features: ['ChatGPT', 'HTML', 'CSS', 'JavaScript'],
     developers: ['우엉차'],
     tags: ['텍스트 어드벤처', '공포', '멀티 엔딩'],
     award: 'special'
