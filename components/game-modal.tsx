@@ -82,9 +82,16 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
                 )}
               </div>
               <div className="mt-2">
-                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getGenreColor(game.genre)}`}>
-                  {game.genre}
-                </span>
+                <div className="flex flex-wrap gap-2">
+                  {game.genre.split(',').map((genre, index) => (
+                    <span
+                      key={index}
+                      className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-700/40 text-slate-300 border border-slate-500/30"
+                    >
+                      {genre.trim()}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -109,7 +116,7 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
             {/* Theme Interpretation */}
             {game.themeInterpretation && (
               <div>
-                <h3 className="text-lg font-semibold mb-3 text-white">주제해석</h3>
+                <h3 className="text-lg font-semibold mb-3 text-white">주제 설명</h3>
                 <p className="text-slate-300 leading-relaxed">{game.themeInterpretation}</p>
               </div>
             )}
@@ -117,7 +124,7 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
             {/* Used Tools/Programs */}
             {game.features && game.features.length > 0 && (
               <div>
-                <h3 className="text-lg font-semibold mb-3 text-white">사용한 프로그램</h3>
+                <h3 className="text-lg font-semibold mb-3 text-white">사용한 툴</h3>
                 <div className="flex flex-wrap gap-2">
                   {game.features.map((feature, index) => (
                     <span
