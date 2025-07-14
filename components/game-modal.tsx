@@ -119,11 +119,15 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
         </div>
 
         {/* Content */}
-        <div className="overflow-y-auto max-h-[calc(90vh-80px)] scroll-smooth" 
+        <div className="overflow-y-auto max-h-[calc(90vh-80px)]" 
              style={{
                WebkitOverflowScrolling: 'touch',
                touchAction: 'pan-y',
-               overscrollBehavior: 'contain'
+               overscrollBehavior: 'none',
+               willChange: 'scroll-position',
+               transform: 'translateZ(0)',
+               backfaceVisibility: 'hidden',
+               perspective: '1000px'
              }}>
           {/* Game Details */}
           <div className="p-8 space-y-8 pb-12">
@@ -155,7 +159,11 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
 
             {/* Theme Interpretation */}
             {game.themeInterpretation && (
-              <div>
+              <div style={{ 
+                transform: 'translateZ(0)', 
+                backfaceVisibility: 'hidden',
+                willChange: 'transform'
+              }}>
                 <h3 className="text-lg font-semibold mb-3 text-white">주제 설명</h3>
                 <p className="text-slate-300 leading-relaxed">{game.themeInterpretation}</p>
               </div>
@@ -163,13 +171,21 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
 
             {/* Used Tools/Programs */}
             {game.features && game.features.length > 0 && (
-              <div>
+              <div style={{ 
+                transform: 'translateZ(0)', 
+                backfaceVisibility: 'hidden',
+                willChange: 'transform'
+              }}>
                 <h3 className="text-lg font-semibold mb-3 text-white">사용한 툴</h3>
                 <div className="flex flex-wrap gap-2">
                   {game.features.map((feature, index) => (
                     <span
                       key={index}
                       className="px-3 py-1.5 bg-gradient-to-r from-purple-900/60 to-blue-900/60 text-purple-200 text-sm rounded-full border border-purple-500/30 font-medium"
+                      style={{ 
+                        transform: 'translateZ(0)', 
+                        backfaceVisibility: 'hidden'
+                      }}
                     >
                       {feature}
                     </span>
