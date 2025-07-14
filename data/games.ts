@@ -10,15 +10,8 @@ export const sampleGames: Game[] = [
     thumbnail: '/images/game-job-simulator.png',
     media: [
       {
-        type: 'youtube',
-        url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-        title: '게임 회사 취업 준비생 시뮬레이터 플레이 영상',
-        thumbnail: '/placeholder.svg?height=180&width=320'
-      },
-      {
-        type: 'image',
-        url: '/images/game-job-simulator.png',
-        title: '게임 스크린샷'
+        type: 'webp',
+        url: '/webp/gamejob-simulator.webp'
       }
     ],
     features: ['Cursor', 'ChatGPT', 'Gemini'],
@@ -35,9 +28,8 @@ export const sampleGames: Game[] = [
     thumbnail: '/images/night-knight-magician.png',
     media: [
       {
-        type: 'youtube',
-        url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-        title: '밤의 마법사와 메카닉 기사 트레일러'
+        type: 'webp',
+        url: '/webp/nightwizardmechanicknight.webp'
       },
       {
         type: 'image',
@@ -59,14 +51,8 @@ export const sampleGames: Game[] = [
     thumbnail: '/images/endless-night.png',
     media: [
       {
-        type: 'youtube',
-        url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-        title: '끝나지 않는 밤 게임플레이'
-      },
-      {
         type: 'webp',
-        url: '/placeholder.svg?height=400&width=600',
-        title: '게임 화면'
+        url: '/webp/endlessnight-intro.webp',
       }
     ],
     features: ['ChatGPT', 'HTML', 'CSS', 'JavaScript'],
@@ -83,14 +69,8 @@ export const sampleGames: Game[] = [
     thumbnail: '/images/vampire.png',
     media: [
       {
-        type: 'youtube',
-        url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-        title: '큥♡뱀파이어서바이벌 액션 영상'
-      },
-      {
-        type: 'image',
-        url: '/placeholder.svg?height=600&width=800',
-        title: '탄막 액션 스크린샷'
+        type: 'webp',
+        url: 'webp/vampiresuv.webp'
       }
     ],
     features: ['ChatGPT', 'NovelAI 4.5 Curated', 'NAIA', 'Cursor'],
@@ -107,15 +87,8 @@ export const sampleGames: Game[] = [
     thumbnail: '/images/3chestnut.png',
     media: [
       {
-        type: 'youtube',
-        url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-        title: '밤, 밤, 밤! 퍼즐 소개',
-        thumbnail: '/placeholder.svg?height=180&width=320'
-      },
-      {
-        type: 'image',
-        url: '/placeholder.svg?height=600&width=800',
-        title: '퍼즐 스테이지'
+        type: 'webp',
+        url: 'webp/chestnut.webp'
       }
     ],
     features: ['Cursor', 'ChatGPT'],
@@ -132,15 +105,8 @@ export const sampleGames: Game[] = [
     thumbnail: '/images/stealth-lns.png',
     media: [
       {
-        type: 'youtube',
-        url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-        title: '야식 몰래 가져오기 잠입 플레이',
-        thumbnail: '/placeholder.svg?height=180&width=320'
-      },
-      {
         type: 'webp',
-        url: '/placeholder.svg?height=400&width=600',
-        title: '잠입 액션 장면'
+        url: '/webp/night-snack.webp',
       }
     ],
     features: ['Gemini', 'ChatGPT', 'Cursor', 'Claude'],
@@ -157,14 +123,8 @@ export const sampleGames: Game[] = [
     thumbnail: '/images/night-graverobber.png',
     media: [
       {
-        type: 'youtube',
-        url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-        title: '밤의 도굴꾼 던전 탐험'
-      },
-      {
-        type: 'image',
-        url: '/placeholder.svg?height=600&width=800',
-        title: '던전 탐험 스크린샷'
+        type: 'webp',
+        url: '/webp/nightrobeer.webp'
       }
     ],
     features: ['Cursor', 'ChatGPT'],

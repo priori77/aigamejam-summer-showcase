@@ -56,7 +56,7 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
       />
       
       {/* Modal */}
-      <div className="relative bg-slate-800 rounded-2xl shadow-2xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-hidden border border-slate-600/50">
+      <div className="relative bg-slate-800 rounded-2xl shadow-2xl max-w-5xl w-full mx-4 max-h-[90vh] overflow-hidden border border-slate-600/50">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-slate-600/50">
           <div className="flex items-center space-x-4">
@@ -106,12 +106,32 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
         {/* Content */}
         <div className="overflow-y-auto max-h-[calc(90vh-80px)]">
           {/* Game Details */}
-          <div className="p-6 space-y-6">
+          <div className="p-8 space-y-8 pb-12">
             {/* Description */}
             <div>
               <h3 className="text-lg font-semibold mb-3 text-white">게임 소개</h3>
               <p className="text-slate-300 leading-relaxed">{game.description}</p>
             </div>
+
+            {/* Media Gallery - Only show if webp exists */}
+            {game.media && game.media.some(media => media.type === 'webp') && (
+              <div>
+                <h3 className="text-lg font-semibold mb-4 text-white">게임 플레이</h3>
+                <div className="grid gap-4 grid-cols-1">
+                  {game.media.filter(media => media.type === 'webp').map((media, index) => (
+                    <div key={index} className="bg-slate-700/20 rounded-lg overflow-hidden border border-slate-600/30">
+                      <div className="relative h-[600px]">
+                        <img
+                          src={media.url}
+                          alt="게임 플레이 영상"
+                          className="w-full h-full object-contain bg-slate-900"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Theme Interpretation */}
             {game.themeInterpretation && (
