@@ -24,6 +24,10 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 262.1 83.3% 57.8%;
     --radius: 0.5rem;
+    
+    /* 모바일 viewport 변수 */
+    --vh: 1vh;
+    --mobile-vh: 1vh;
   }
 
   .dark {
@@ -168,6 +172,12 @@
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
   }
+
+  /* 모바일 모달 상단 여백 확보 */
+  .mobile-modal-container {
+    padding-top: max(2rem, env(safe-area-inset-top, 2rem)) !important;
+    padding-bottom: max(1rem, env(safe-area-inset-bottom, 1rem)) !important;
+  }
 }
 
 /* 안드로이드 크롬 특화 최적화 */
@@ -178,4 +188,10 @@
     backface-visibility: hidden;
     perspective: 1000px;
   }
+}
+
+/* 모달이 열렸을 때 백그라운드 스크롤 차단 */
+body.modal-open {
+  overflow: hidden;
+  /* padding-right는 JS에서 동적으로 설정합니다. */
 } 
