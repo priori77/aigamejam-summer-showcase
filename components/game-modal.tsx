@@ -201,7 +201,7 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
             {/* Used Tools/Programs */}
             {game.features && game.features.length > 0 && (
               <div>
-                <h3 className="text-lg font-semibold mb-3 text-white">사용한 툴</h3>
+                <h3 className="text-lg font-semibold mb-3 text-white">사용한 툴/엔진</h3>
                 <div className="flex flex-wrap gap-2">
                   {game.features.map((feature, index) => (
                     <span
