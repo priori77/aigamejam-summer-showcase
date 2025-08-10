@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { Play, Users, ExternalLink, Sun, Waves } from 'lucide-react'
+import { Play, Users, ExternalLink, Award, Sparkles } from 'lucide-react'
 import { Game } from '@/types/game'
 
 interface GameCardProps {
@@ -15,16 +15,16 @@ export default function GameCard({ game, onCardClick }: GameCardProps) {
 
   return (
     <div
-      className="group relative summer-card overflow-hidden game-card-hover cursor-pointer"
+      className="group relative night-card rounded-2xl shadow-lg overflow-hidden game-card-hover cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => onCardClick(game)}
     >
       {/* Background Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-sky-400/20 via-teal-400/20 to-yellow-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-indigo-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       
       {/* Game Thumbnail */}
-      <div className="relative h-64 md:h-56 lg:h-64 overflow-hidden">
+      <div className="relative h-48 overflow-hidden">
         <Image
           src={game.thumbnail}
           alt={game.name}
@@ -34,43 +34,60 @@ export default function GameCard({ game, onCardClick }: GameCardProps) {
         />
         
         {/* Play Button Overlay */}
-        <div className={`absolute inset-0 bg-black/20 flex items-center justify-center transition-opacity duration-300 ${
+        <div className={`absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300 ${
           isHovered ? 'opacity-100' : 'opacity-0'
         }`}>
-          <div className="bg-white/90 rounded-full p-4 transform transition-transform duration-300 hover:scale-110 shadow-lg">
-            <Play className="w-8 h-8 text-sky-500 fill-current" />
+          <div className="bg-slate-800/90 rounded-full p-4 transform transition-transform duration-300 hover:scale-110">
+            <Play className="w-8 h-8 text-purple-400 fill-current" />
           </div>
         </div>
 
+        {/* Award Badge */}
+        {game.award && (
+          <div className="absolute bottom-4 left-4">
+            <div className={`flex items-center space-x-1 px-3 py-1 rounded-full text-xs font-semibold ${
+              game.award === 'excellence' 
+                ? 'bg-gradient-to-r from-yellow-400 to-yellow-600 text-white' 
+                : 'bg-gradient-to-r from-purple-400 to-purple-600 text-white'
+            }`}>
+              {game.award === 'excellence' ? (
+                <Award className="w-3 h-3" />
+              ) : (
+                <Sparkles className="w-3 h-3" />
+              )}
+              <span>{game.award === 'excellence' ? '우수상' : '특별상'}</span>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Card Content */}
-      <div className="p-4 md:p-5">
+      <div className="p-6">
         <div className="flex items-start justify-between mb-3">
-          <h3 className="text-lg md:text-xl font-extrabold text-slate-800 group-hover:text-sky-600 transition-colors tracking-wide">
+          <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">
             {game.name}
           </h3>
-          <ExternalLink className="w-5 h-5 text-sky-400 group-hover:text-sky-600 transition-colors" />
+          <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-purple-400 transition-colors" />
         </div>
 
-        <p className="text-slate-600 text-sm mb-3 line-clamp-2 font-medium">
+        <p className="text-slate-300 text-sm mb-4 line-clamp-3">
           {game.description}
         </p>
 
         {/* Features */}
         {game.features && game.features.length > 0 && (
-          <div className="mb-3">
+          <div className="mb-4">
             <div className="flex flex-wrap gap-2">
               {game.features.slice(0, 3).map((feature, index) => (
                 <span
                   key={index}
-                  className="px-2 py-1 bg-sky-100 text-sky-700 text-xs rounded-full border border-sky-200 font-medium"
+                  className="px-2 py-1 bg-purple-900/40 text-purple-300 text-xs rounded-md border border-purple-500/30"
                 >
                   {feature}
                 </span>
               ))}
               {game.features.length > 3 && (
-                <span className="px-2 py-1 bg-teal-100 text-teal-700 text-xs rounded-full border border-teal-200 font-medium">
+                <span className="px-2 py-1 bg-slate-700/40 text-slate-300 text-xs rounded-md border border-slate-500/30">
                   +{game.features.length - 3}
                 </span>
               )}
@@ -79,20 +96,26 @@ export default function GameCard({ game, onCardClick }: GameCardProps) {
         )}
 
         {/* Developers */}
-        <div className="flex items-start text-sm text-slate-600 font-medium">
-          <Users className="w-4 h-4 mr-2 text-teal-500 flex-shrink-0 mt-0.5" />
-          <span className="line-clamp-2">
-            {game.developers.join(', ')}
+        <div className="flex items-center text-sm text-slate-400">
+          <Users className="w-4 h-4 mr-2" />
+          <span>
+            {game.developers.slice(0, 2).join(', ')}
+            {game.developers.length > 2 && ` 외 ${game.developers.length - 2}명`}
           </span>
         </div>
       </div>
 
       {/* Hover Effect Border */}
-      <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-sky-400/50 transition-colors duration-300 pointer-events-none" />
+      <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-purple-400/50 transition-colors duration-300 pointer-events-none" />
       
-      {/* Decorative Summer Elements */}
-      <Sun className="absolute top-2 right-2 w-8 h-8 text-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 float-animation" />
-      <Waves className="absolute bottom-0 left-0 w-full h-8 text-teal-300/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      {/* Decorative SVG Elements */}
+      <svg
+        className="absolute top-2 right-2 w-8 h-8 text-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+      </svg>
     </div>
   )
 } 

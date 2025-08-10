@@ -13,9 +13,9 @@ export const viewport = {
 }
 
 export const metadata: Metadata = {
-  title: '게임취업밤 2차 AI 게임잼',
+  title: '게임취업밤 AI 게임잼 수상작',
   description: '게임취업밤에서 주최한 AI 게임잼의 우수상과 특별상 수상작들을 만나보세요. AI를 활용한 창의적인 게임들의 쇼케이스입니다.',
-  keywords: ['AI', '게임잼', '게임', '게임 개발', '게임취업밤'],
+  keywords: ['AI', '게임잼', '게임', '인공지능', '게임 개발', '쇼케이스', '게임취업밤'],
   openGraph: {
     title: '게임취업밤 AI 게임잼 수상작',
     description: '게임취업밤에서 주최한 AI 게임잼의 우수상과 특별상 수상작들을 만나보세요.',
@@ -50,8 +50,8 @@ export default function RootLayout({
         <meta name="twitter:card" content="summary_large_image" />
 
       </head>
-      <body className={inter.className}>
-        <div className="min-h-screen"
+      <body className={`${inter.className} dark`}>
+        <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-black"
              style={{
                WebkitOverflowScrolling: 'touch',
                touchAction: 'manipulation',
