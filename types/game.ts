@@ -5,6 +5,12 @@ export interface GameMedia {
   thumbnail?: string;
 }
 
+export interface GameRule {
+  type: 'text' | 'image';
+  content: string;
+  title?: string;
+}
+
 export interface Game {
   id: string;
   name: string;
@@ -17,6 +23,7 @@ export interface Game {
   developers: string[];
   tags: string[];
   award?: 'excellence' | 'special'; // 우수상 또는 특별상
+  gameRules?: GameRule[]; // 게임 룰 소개
 }
 
 export interface GameJamEvent {

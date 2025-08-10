@@ -5,25 +5,25 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 203 19% 25%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 203 19% 25%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 262.1 83.3% 57.8%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 84% 4.9%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 203 19% 25%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 50 98% 64%;
+    --secondary-foreground: 203 19% 25%;
+    --muted: 183 32% 86%;
+    --muted-foreground: 203 13% 40%;
+    --accent: 50 98% 64%;
+    --accent-foreground: 203 19% 25%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 262.1 83.3% 57.8%;
-    --radius: 0.5rem;
+    --destructive-foreground: 0 0% 100%;
+    --border: 183 32% 90%;
+    --input: 183 32% 90%;
+    --ring: 199 89% 48%;
+    --radius: 1rem;
     
     /* 모바일 viewport 변수 */
     --vh: 1vh;
@@ -31,25 +31,25 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 262.1 83.3% 57.8%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --background: 203 39% 8%;
+    --foreground: 0 0% 95%;
+    --card: 203 39% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 203 39% 12%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 50 98% 64%;
+    --secondary-foreground: 203 19% 25%;
+    --muted: 183 20% 25%;
+    --muted-foreground: 183 10% 65%;
+    --accent: 50 98% 64%;
+    --accent-foreground: 203 19% 25%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 262.1 83.3% 57.8%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 183 20% 20%;
+    --input: 183 20% 20%;
+    --ring: 199 89% 48%;
   }
 }
 
@@ -66,7 +66,15 @@
   }
   
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background: linear-gradient(to bottom, 
+      rgb(240 249 255) 0%, 
+      rgb(224 242 254) 20%, 
+      rgb(186 230 253) 40%, 
+      rgb(125 211 252) 70%, 
+      rgb(165 243 252) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -92,63 +100,81 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-violet-600 via-purple-600 to-blue-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-sky-600 via-sky-500 to-teal-500 bg-clip-text text-transparent font-extrabold tracking-wide;
   }
   
   .game-card-hover {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25;
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-sky-400/25;
   }
   
   .glass-effect {
-    background: rgba(15, 23, 42, 0.8);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(148, 163, 184, 0.1);
+    border: 1px solid rgba(14, 165, 233, 0.15);
     will-change: transform;
     transform: translateZ(0);
   }
+  
+  .summer-card {
+    @apply bg-white/80 backdrop-blur-sm shadow-xl rounded-2xl border border-sky-200/30;
+  }
+  
+  .summer-button {
+    @apply bg-sky-500 hover:bg-sky-600 text-white font-medium rounded-full px-6 py-3 transition-all hover:scale-105 hover:shadow-lg;
+  }
+  
+  .summer-accent-button {
+    @apply bg-yellow-400 hover:bg-yellow-500 text-slate-800 font-medium rounded-full px-6 py-3 transition-all hover:scale-105 hover:shadow-lg;
+  }
 }
 
-/* 밤 테마 전용 스타일 */
-.night-glow {
-  box-shadow: 0 0 20px rgba(147, 51, 234, 0.3), 0 0 40px rgba(59, 130, 246, 0.2);
+/* 여름 테마 전용 스타일 */
+.summer-glow {
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.3), 0 0 40px rgba(250, 204, 21, 0.2);
 }
 
-.night-gradient-text {
-  background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 25%, #a5b4fc 50%, #8b5cf6 75%, #7c3aed 100%);
+.summer-gradient-text {
+  background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 25%, #14b8a6 50%, #facc15 75%, #fbbf24 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.night-card {
-  background: rgba(30, 41, 59, 0.8);
-  border: 1px solid rgba(148, 163, 184, 0.2);
-  backdrop-filter: blur(8px);
+.wave-animation {
+  animation: wave 3s ease-in-out infinite;
 }
 
-.night-card:hover {
-  background: rgba(51, 65, 85, 0.9);
-  border: 1px solid rgba(168, 85, 247, 0.4);
-  box-shadow: 0 8px 32px rgba(147, 51, 234, 0.2);
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-/* 스크롤바 다크 테마 */
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+}
+
+/* 스크롤바 여름 테마 */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.8);
-  border-radius: 4px;
+  background: rgba(224, 242, 254, 0.5);
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(100, 116, 139, 0.6);
-  border-radius: 4px;
+  background: linear-gradient(180deg, #0ea5e9 0%, #14b8a6 100%);
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.8);
+  background: linear-gradient(180deg, #0284c7 0%, #0d9488 100%);
 }
 
 /* 안드로이드 모바일 스크롤 최적화 */
