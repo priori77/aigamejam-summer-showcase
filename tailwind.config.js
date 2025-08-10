@@ -66,23 +66,46 @@ module.exports = {
           to: { height: 0 },
         },
         "float": {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-10px)" },
+          "0%, 100%": { transform: "translateY(0px) rotate(-2deg)" },
+          "50%": { transform: "translateY(-20px) rotate(2deg)" },
         },
         "glow": {
           "0%, 100%": { 
-            boxShadow: "0 0 20px rgba(124, 58, 237, 0.5)" 
+            boxShadow: "0 0 20px rgba(14, 165, 233, 0.5)" 
           },
           "50%": { 
-            boxShadow: "0 0 30px rgba(124, 58, 237, 0.8)" 
+            boxShadow: "0 0 30px rgba(250, 204, 21, 0.8)" 
           },
         },
+        "wave": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        "bounce-slow": {
+          "0%, 100%": { 
+            transform: "translateY(0px)",
+            animationTimingFunction: "cubic-bezier(0.8, 0, 1, 1)"
+          },
+          "50%": { 
+            transform: "translateY(-25px)",
+            animationTimingFunction: "cubic-bezier(0, 0, 0.2, 1)"
+          },
+        },
+        "swim": {
+          "0%": { transform: "translateX(0) rotate(0deg)" },
+          "25%": { transform: "translateX(10px) rotate(-5deg)" },
+          "75%": { transform: "translateX(-10px) rotate(5deg)" },
+          "100%": { transform: "translateX(0) rotate(0deg)" },
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "float": "float 3s ease-in-out infinite",
+        "float": "float 4s ease-in-out infinite",
         "glow": "glow 2s ease-in-out infinite alternate",
+        "wave": "wave 3s ease-in-out infinite",
+        "bounce-slow": "bounce-slow 3s ease-in-out infinite",
+        "swim": "swim 4s ease-in-out infinite",
       },
     },
   },
