@@ -105,7 +105,7 @@ export const sampleGames: Game[] = [
     id: 'shutter-island',
     name: 'SHUTTER ISLE',
     genre: '캐주얼 힐링, 멀티 엔딩 스토리, 메타 픽션',
-    description: 'description',
+    description: '제 휴가는 휴가처럼 안보이나요?',
     thumbnail: '/images/shutter-island.png',
     media: [
       {
