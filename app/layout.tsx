@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description: '게임취업밤 2차 AI 게임잼의 출품작들을 만나보세요.',
   keywords: ['AI', '게임잼', '게임취업밤'],
   openGraph: {
-    title: '게임취업밤 AI 게임잼 수상작',
+    title: '게임취업밤 AI 게임잼 출품작',
     description: '게임취업밤 2차 AI 게임잼의 출품작들을 만나보세요.',
     type: 'website',
     siteName: '게임취업밤 2차 AI 게임잼 출품작',
