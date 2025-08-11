@@ -49,7 +49,7 @@ export default function Header() {
               title="1차 게임잼 보기"
             >
               <Trophy className="w-5 h-5" />
-              <span>1차 Ai 게임잼</span>
+              <span>1차 AI 게임잼</span>
             </a>
             
             {/* Discord Link */}
