@@ -47,7 +47,7 @@ export default function GameCard({ game, onCardClick }: GameCardProps) {
       {/* Card Content */}
       <div className="p-4 md:p-5">
         <div className="flex items-start justify-between mb-3">
-          <h3 className="text-lg md:text-xl font-extrabold text-slate-800 group-hover:text-sky-600 transition-colors tracking-wide">
+          <h3 className="text-lg md:text-xl font-extrabold text-slate-800 group-hover:text-sky-600 transition-colors tracking-wide whitespace-pre-line">
             {game.name}
           </h3>
           <ExternalLink className="w-5 h-5 text-sky-400 group-hover:text-sky-600 transition-colors" />

@@ -25,7 +25,7 @@ export const sampleGames: Game[] = [
   },
   {
     id: 'vacation-island',
-    name: '바캉스 아일랜드: 더위 탈출 프로젝트',
+    name: '바캉스 아일랜드:\n더위 탈출 프로젝트',
     genre: '퍼즐, 머지',
     description: '바캉스 아일랜드에서 무서운 폭염을 피하세요!',
     thumbnail: '/images/vacation-island.png',
