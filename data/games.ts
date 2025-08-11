@@ -6,7 +6,7 @@ export const sampleGames: Game[] = [
     name: 'Working Holiday',
     genre: '2D 도트 탑뷰 클리커, 타이쿤',
     description: '여름의 꽃 휴가.. 누군가는 일한다!',
-    thumbnail: '/images/working-holiday.png',
+    thumbnail: '/images/working-holiday-thumbnail.png',
     media: [
       {
         type: 'webp',
