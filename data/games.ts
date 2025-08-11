@@ -24,37 +24,10 @@ export const sampleGames: Game[] = [
     ]
   },
   {
-    id: 'H@NA FUDA',
-    name: 'H@NA FUDA',
-    genre: 'BLALTRO 라이크, 덱 빌딩',
-    description: 'description',
-    thumbnail: '/images/hana-fuda.png',
-    media: [
-      {
-        type: 'webp',
-        url: '/webp/nightwizardmechanicknight.webp'
-      },
-      {
-        type: 'image',
-        url: '/placeholder.svg?height=600&width=800',
-        title: '게임 스크린샷'
-      }
-    ],
-    features: ['ChatGPT', 'NovelAI 4.5 Curated', 'NAIA', 'Cursor'],
-    developers: ['샌드위치스테이크'],
-    tags: ['BLALTRO 라이크', '덱 빌딩'],
-    gameRules: [
-      {
-        type: 'image',
-        content: '/images/hana-fuda-guide.png'
-      }
-    ]
-  },
-  {
     id: 'vacation-island',
     name: '바캉스 아일랜드: 더위 탈출 프로젝트',
     genre: '퍼즐, 머지',
-    description: 'description',
+    description: '바캉스 아일랜드에서 무서운 폭염을 피하세요!',
     thumbnail: '/images/vacation-island.png',
     media: [
       {
@@ -175,14 +148,91 @@ export const sampleGames: Game[] = [
         content: '/images/today-rest-guide.jpg'
       }
     ]
+  },
+  {
+    id: 'can-fit',
+    name: '이게 다 들어간다고?',
+    genre: '인벤토리 관리 시뮬레이션',
+    description: '짐을 최대한 많이 넣고 성공적인 휴가를 만들어보세요!',
+    thumbnail: '/images/can-fit.png',
+    media: [
+      {
+        type: 'webp',
+        url: '/webp/can-fit.webp'
+      }
+    ],
+    features: ['Cursor', 'ChatGPT'],
+    developers: ['절실'],
+    tags: ['인벤토리 관리 시뮬레이션'],
+    gameRules: [
+      {
+        type: 'image',
+        content: '/images/can-fit-guide.png'
+      }
+    ]
+  },
+  {
+    id: 'heat-waytowork',
+    name: '폭염 속 출근 전쟁',
+    genre: '생존 탐색형 어드벤처',
+    description: '40도가 넘는 폭염에도 매일 출근하는 직장인의 숙명! 폭염 속 출근 전쟁에서 살아남으세요!',
+    thumbnail: '/images/heat-waytowork.jpg',
+    media: [
+      {
+        type: 'webp',
+        url: '/webp/heat-waytowork.webp'
+      },
+      {
+        type: 'image',
+        url: '/placeholder.svg?height=600&width=800',
+        title: '게임 스크린샷'
+      }
+    ],
+    features: ['ChatGPT', 'Cursor'],
+    developers: ['쉽지않다'],
+    tags: ['BLALTRO 라이크', '덱 빌딩'],
+    gameRules: [
+      {
+        type: 'image',
+        content: '/images/heat-waytowork-guide.jpg'
+      }
+    ]
+  }
+  ,
+  {
+    id: 'H@NA FUDA',
+    name: 'H@NA FUDA',
+    genre: 'BLALTRO 라이크, 덱 빌딩',
+    description: 'BALATRO 라이크 THE iDOLM@STER 동인게임입니다.',
+    thumbnail: '/images/hana-fuda.png',
+    media: [
+      {
+        type: 'webp',
+        url: '/webp/hanafuda.webp'
+      },
+      {
+        type: 'image',
+        url: '/placeholder.svg?height=600&width=800',
+        title: '게임 스크린샷'
+      }
+    ],
+    features: ['ChatGPT', 'NovelAI 4.5 Curated', 'NAIA', 'Cursor'],
+    developers: ['샌드위치스테이크'],
+    tags: ['BLALTRO 라이크', '덱 빌딩'],
+    gameRules: [
+      {
+        type: 'image',
+        content: '/images/hana-fuda-guide.png'
+      }
+    ]
   }
 ]
 
 export const gameJamEvent: GameJamEvent = {
   title: '게임취업밤 2차 AI 게임잼',
   description: '인공지능과 게임 개발의 만남! 창의적인 아이디어와 최신 AI 기술을 활용한 혁신적인 게임들이 한자리에 모였습니다.',
-  startDate: '2025-06-21',
-  endDate: '2025-06-21',
+  startDate: '2025-08-08',
+  endDate: '2025-08-10',
   participants: 10,
   games: sampleGames
 } 

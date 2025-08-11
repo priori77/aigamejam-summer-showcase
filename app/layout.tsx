@@ -13,14 +13,14 @@ export const viewport = {
 }
 
 export const metadata: Metadata = {
-  title: '게임취업밤 2차 AI 게임잼',
-  description: '게임취업밤에서 주최한 AI 게임잼의 우수상과 특별상 수상작들을 만나보세요. AI를 활용한 창의적인 게임들의 쇼케이스입니다.',
-  keywords: ['AI', '게임잼', '게임', '게임 개발', '게임취업밤'],
+  title: '게임취업밤 2차 AI 게임잼 출품작',
+  description: '게임취업밤 2차 AI 게임잼의 출품작들을 만나보세요.',
+  keywords: ['AI', '게임잼', '게임취업밤'],
   openGraph: {
     title: '게임취업밤 AI 게임잼 수상작',
-    description: '게임취업밤에서 주최한 AI 게임잼의 우수상과 특별상 수상작들을 만나보세요.',
+    description: '게임취업밤 2차 AI 게임잼의 출품작들을 만나보세요.',
     type: 'website',
-    siteName: '게임취업밤 AI 게임잼',
+    siteName: '게임취업밤 2차 AI 게임잼 출품작',
     images: [
       {
         url: '/images/gamejobnight.jpg',

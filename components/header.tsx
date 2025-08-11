@@ -30,7 +30,7 @@ export default function Header() {
             </div>
             <div className="flex items-center space-x-2 text-sm summer-card px-3 py-2 rounded-full">
               <Users className="w-4 h-4 text-teal-500" />
-              <span className="text-teal-800 font-medium">총 참가자 n명</span>
+              <span className="text-teal-800 font-medium">총 참가자 21명</span>
             </div>
             <div className="flex items-center space-x-2 text-sm summer-card px-3 py-2 rounded-full">
               <Trophy className="w-4 h-4 text-yellow-500" />
