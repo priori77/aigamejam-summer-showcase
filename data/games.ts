@@ -3,7 +3,7 @@ import { Game, GameJamEvent } from '@/types/game'
 export const sampleGames: Game[] = [
   {
     id: 'working-holiday',
-    name: 'Working Holiday',
+    name: 'Workin\'\ Holiday',
     genre: '2D 도트 탑뷰 클리커, 타이쿤',
     description: '여름의 꽃 휴가.. 누군가는 일한다!',
     thumbnail: '/images/working-holiday-thumbnail.png',
@@ -161,7 +161,7 @@ export const sampleGames: Game[] = [
         url: '/webp/can-fit.webp'
       }
     ],
-    features: ['Cursor', 'ChatGPT'],
+    features: ['Gemini CLI', 'ChatGPT'],
     developers: ['절실'],
     tags: ['인벤토리 관리 시뮬레이션'],
     gameRules: [
